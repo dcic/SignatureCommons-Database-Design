@@ -1,0 +1,19 @@
+1.) place copy of signatureCommonsFullDump_07_05_2018.psql (download here: https://storage.googleapis.com/lincs-bucket/signatureCommonsFullDump_07_05_2018.psql) on the machine where you postgres instance is installed.
+    Make sure postgres user has 'r' privledges in the location where signatureCommonsFullDump_07_05_2018.psql is placed.
+
+2.) Once logged into the machine, swithc to the postgres user:
+	
+	user-bash-4.1$ sudo -u postgres -i  
+	postgres-bash-4.1$
+
+3.) create an empty database that will be the signaturecommons instance:
+
+	postgres-bash-4.1$ createdb -T template0 signaturecommons
+	postgres-bash-4.1$
+
+4.) install the signaturecommons instance from file, signatureCommonsFullDump_07_05_2018.psql
+	
+	postgres-bash-4.1$ psql signaturecommons < /path/to/file/signatureCommonsFullDump_07_05_2018.psql
+	postgres-bash-4.1$
+
+5.) Enjoy your new instance of the signaturecommons postgreSQL database.
